@@ -13,4 +13,46 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //= require_tree .
+
+//= require bootstrap/carousel
+$(document).ready(function() {
+  $('#myCarousel').carousel({interval: 2000});
+});
+
+$(document).on('turbolinks:load', function() {
+  /*增加数量*/
+  $("#quantity-plus").click(function(e) {
+    var num = parseInt($("#quantity-input").val()) + 1;
+    $("#quantity-minus").removeClass("disabled");
+    $("#quantity-input").val(num);
+    e.preventDefault();
+  });
+
+  /*减少数量*/
+  $("#quantity-minus").click(function(e) {
+    var num = parseInt($("#quantity-input").val());
+    if (num > 1) {
+      $("#quantity-input").val(num -= 1);
+      $("#quantity-plus").removeClass("disabled");
+    }
+    if (num <= 1) {
+      $("#quantity-minus").addClass("disabled");
+    }
+    e.preventDefault();
+  });
+});
+
+/*回到顶部*/
+$(document).on('click', '#gotop', function () {
+  $('body').animate({'scrollTop': 0}, 500) //在500ms的时间内，慢慢地回到顶部
+})
+$(window).scroll(function () {
+  if ($(this).scrollTop() > 500) {
+    $('#gotop').fadeIn() // 当页面向下滚动的距离大于500px时，慢慢地显示「回到顶部按钮」
+  } else {
+    $('#gotop').fadeOut() // 否则慢慢地隐藏「回到顶部按钮」
+  }
+})
