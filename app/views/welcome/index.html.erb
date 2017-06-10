@@ -17,6 +17,7 @@
     </section>
 </div>
 
+
  <div class="main">
     <section class="sec-aboutus">
       <h2 class="section-title">关于我们</h2>
@@ -31,7 +32,7 @@
 
         <div class="row text-center">
           <div class="col-xs-12 col-sm-4">
-            
+
             <div class="thumbnail">
 
               <img src="http://ww1.sinaimg.cn/large/006tKfTcgy1fg6k3c2ghuj31hc0zkwnp.jpg" >
@@ -216,7 +217,20 @@
         </div>
       </div>
     </div>
+    <a id="btn-music" class="btn-music"></a>
+     <audio class="music" src="393237_太阳照常升起.mp3" autoplay controls loop hidden>
+     </audio>
   </section>
 
 </div>
 </div>
+
+<script type="text/javascript">
+let playMusic = true;
+document.getElementById("btn-music").addEventListener("click", function() {
+  playMusic = !playMusic;
+  document.getElementById("btn-music").classList.toggle('music-off');
+  playMusic ? document.querySelector('.music').play() : document.querySelector('.music').pause();
+  });
+  worldMusic.volume = 0.2;//预设音量
+  </script>
