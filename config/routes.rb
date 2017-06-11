@@ -24,12 +24,16 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :add_to_favorite
+      post :quit_favorite
     end
+    collection do
+      get :search
+    end
+    resources  :comments
   end
 
-
   namespace :admin do
-
    resources :products do
      member do
        patch :move_up
@@ -45,10 +49,11 @@ Rails.application.routes.draw do
        post :return
      end
    end
+
+   resources :categories
  end
 
 
  devise_for :users
- root 'products#index'
-
+ root 'welcome#index'
 end
