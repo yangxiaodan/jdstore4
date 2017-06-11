@@ -12,6 +12,7 @@
               <li>
                 <%= link_to("课程", products_path) %>
               </li>
+
               <li>
                 <%= link_to(content_tag(:i, "我的收藏", class: "fa fa-heart fa-md"), products_path(:favorite => "yes"))%>
               </li>
@@ -22,8 +23,7 @@
           </a>
           <ul class="dropdown-menu">
             <% Category.all.each do |category| %>
-
-              <li><%= link_to(category.name, products_path(category_id: category.id))%></li>  <!--这里的products_path后面括号部分，就是筛选的条件 -->
+              <li><%= link_to(category.name, products_path(category_id: category_id))%></li>  <!--这里的products_path后面括号部分，就是筛选的条件 -->
                 <% end %>
           </ul>
         </li>

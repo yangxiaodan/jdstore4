@@ -1,9 +1,18 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
+<<<<<<< HEAD
 
   def show
     @product = Product.find(params[:id])
     @comments = @product.comments
+=======
+  def index
+    @products = Product.all.order("position ASC")
+  end
+
+  def show
+    @product = Product.find(params[:id])
+>>>>>>> 1a467191b1609ff8fe1fc9a5717ee90e43c5f9cb
   end
 
   def add_to_cart
@@ -24,6 +33,7 @@ class ProductsController < ApplicationController
     end
   end
 
+<<<<<<< HEAD
   def add_to_favorite
     @product = Product.find(params[:id])
     @product.users << current_user
@@ -45,6 +55,8 @@ class ProductsController < ApplicationController
     end
   end
 
+=======
+>>>>>>> 1a467191b1609ff8fe1fc9a5717ee90e43c5f9cb
   private
 
   def validate_search_key

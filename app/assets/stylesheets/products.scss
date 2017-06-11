@@ -3,7 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /* 商品详情页CSS样式表 */
+<<<<<<< HEAD
 
+=======
+.row{
+  margin-bottom: 30px;
+}
+>>>>>>> 1a467191b1609ff8fe1fc9a5717ee90e43c5f9cb
 // 商品标题样式
 .product-title {
   color: #455A64;
@@ -29,7 +35,10 @@
 
 // 商品价格样式
 .product-price-bgcolor {
+<<<<<<< HEAD
   // padding: 0.5em 1em;
+=======
+>>>>>>> 1a467191b1609ff8fe1fc9a5717ee90e43c5f9cb
   margin-bottom: 1em;
 }
 .product-price {
@@ -42,6 +51,10 @@
   font-size: 1.5em;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1a467191b1609ff8fe1fc9a5717ee90e43c5f9cb
   .banner-img{
     height: 600px;
     position: relative;
